@@ -253,7 +253,7 @@ impl BenchConfig {
                 "\"history_gossip\":{},\"max_transmit_size\":{},\"warmup_secs\":{},",
                 "\"settle_secs\":{},\"seed\":{},",
                 "\"transport\":\"memory+plaintext+yamux-default-windows\",",
-                "\"signing\":\"signed\",\"libp2p_rev\":\"ee8bf12e6d94d48518ea67773abb11625b2c4f41\"}}"
+                "\"signing\":\"signed\",\"libp2p_rev\":\"{}\"}}"
             ),
             self.nodes,
             self.edges_per_node,
@@ -274,8 +274,17 @@ impl BenchConfig {
             self.warmup_secs,
             self.settle_secs,
             self.seed,
+            libp2p_rev(),
         )
     }
+}
+
+/// Source revision disclosed in the summary.  The differential runner
+/// overrides this per side via BENCH_LIBP2P_REV; the default is the
+/// pinned baseline rev from Cargo.toml.
+fn libp2p_rev() -> String {
+    std::env::var("BENCH_LIBP2P_REV")
+        .unwrap_or_else(|_| "ee8bf12e6d94d48518ea67773abb11625b2c4f41".to_string())
 }
 
 #[cfg(test)]
