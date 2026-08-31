@@ -1,0 +1,10 @@
+{"config":{"nodes":10,"edges_per_node":12,"mesh_n":8,"mesh_n_low":6,"mesh_n_high":12,"message_bytes":1000000,"messages":3,"latency_ms":50,"bandwidth_mbps":50,"flood_publish":false,"idontwant_on_publish":false,"validation":"strict","heartbeat_ms":1000,"history_length":5,"history_gossip":3,"max_transmit_size":2000000,"warmup_secs":8,"settle_secs":15,"seed":42,"transport":"memory+plaintext+yamux-default-windows","signing":"signed","libp2p_rev":"ee8bf12e6d94d48518ea67773abb11625b2c4f41"},
+"mesh_degree_min":6,"mesh_degree_max":9,
+"messages_complete":3,"messages_total":3,
+"delivery_latency_ms":{"p50":246.3,"p90":461.0,"p99":475.6,"max":910.2},
+"completion_ms":{"p50":475.6,"max":910.2},
+"wire_bytes_received_total":186191932,"ideal_payload_bytes":27000000,"amplification":6.895,
+"wall_seconds":11.9,
+"messages":[{"seq":0,"publish_ok":true,"publish_err":"","publish_call_ms":3.603,"delivered":9,"expected":9,"complete":true},
+{"seq":1,"publish_ok":true,"publish_err":"","publish_call_ms":8.647,"delivered":9,"expected":9,"complete":true},
+{"seq":2,"publish_ok":true,"publish_err":"","publish_call_ms":3.623,"delivered":9,"expected":9,"complete":true}]}
